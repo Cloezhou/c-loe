@@ -2,28 +2,62 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#17130f">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f0e3">
   <title>行迹 · 长沙咖啡地图</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main class="app-shell">
-    <img class="map-preview" src="map-preview.svg" alt="行迹长沙咖啡地图">
+  <main class="app">
+    <header>
+      <small>CHANGSHA · COFFEE WALK</small>
+      <h1 id="title">行迹 · 长沙咖啡地图</h1>
+      <button class="more" aria-label="更多">•••</button>
+    </header>
 
-    <button class="location-button" id="locationButton" type="button" aria-label="获取当前位置">
-      <span>⌖</span>
-    </button>
+    <section id="mapPage" class="page active">
+      <div class="filters"><button class="active">附近 3 公里⌄</button><button>独立咖啡</button><button>可盖章</button></div>
+      <div class="map">
+        <div class="mountain"><b>岳麓山</b></div>
+        <div class="river"><b>湘江</b><i>橘子洲</i></div>
+        <span class="place p1">开福区</span><span class="place p2">五一广场</span><span class="place p3">天心区</span>
+        <button class="pin" style="left:55%;top:50%" data-id="0">☕</button>
+        <button class="pin" style="left:68%;top:31%" data-id="1">☕</button>
+        <button class="pin" style="left:73%;top:65%" data-id="2">☕</button>
+        <button class="pin" style="left:21%;top:51%" data-id="3">☕</button>
+        <button class="pin" style="left:43%;top:67%" data-id="4">☕</button>
+        <div id="location" class="location"><span></span></div>
+        <button id="locate" class="locate" aria-label="定位">⌖</button>
+      </div>
+      <section class="nearby">
+        <div class="handle"></div>
+        <div class="section-title"><div><small>NEARBY PICKS</small><h2 id="nearbyTitle">长沙精选咖啡</h2></div><button id="refresh">刷新附近</button></div>
+        <div id="cafeList"></div>
+      </section>
+    </section>
 
-    <nav class="tabbar" aria-label="主要栏目">
-      <button class="tab active" type="button" data-tab="咖啡"><span>☕</span>咖啡</button>
-      <button class="tab" type="button" data-tab="路线"><span>🧭</span>路线</button>
-      <button class="tab" type="button" data-tab="图鉴"><span>🏅</span>图鉴</button>
-      <button class="tab" type="button" data-tab="排行"><span>♛</span>排行</button>
+    <section id="badgesPage" class="page badges-page">
+      <p>走进长沙的街巷与山水，收集属于你的城市记忆。</p>
+      <strong>已收集 <b id="badgeCount">8</b> / 30</strong>
+      <div id="badgeGrid" class="badge-grid"></div>
+    </section>
+
+    <section id="mePage" class="page me-page">
+      <div class="avatar">行</div><h2>长沙漫游者</h2><p>第 2 级 · 街巷初探</p>
+      <div class="progress"><i></i></div>
+      <div class="stats"><div><b id="myCount">8</b><span>印记</span></div><div><b>6.8 km</b><span>步行</span></div><div><b>160</b><span>星火值</span></div></div>
+      <article class="route"><small>今日推荐路线</small><h2>湘江咖啡漫步</h2><p>潮宗街 → 五一广场 → 橘子洲<br>4.2公里 · 约2小时 · 3家咖啡</p><button id="routeBtn">开始探索</button></article>
+    </section>
+
+    <nav>
+      <button class="active" data-page="map"><i>⌑</i><span>地图</span></button>
+      <button data-page="badges"><i>✦</i><span>印记</span></button>
+      <button data-page="me"><i>♙</i><span>我的</span></button>
     </nav>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
-  <script src="app.js"></script>
+
+  <div id="modal" class="modal" hidden><article class="detail"><button id="close">×</button><div id="detailPhoto" class="detail-photo"></div><div class="detail-body"><small>CURATED COFFEE STOP</small><h2 id="detailName"></h2><div id="detailTags" class="tags"></div><p id="detailDistance"></p><p id="detailNote"></p><div class="drink"><span>本店推荐</span><b id="detailDrink"></b></div><div class="actions"><button id="navigate">↗ 导航到店</button><button id="stamp" class="primary">✦ 到店盖章</button></div></div></article></div>
+  <button id="toast" class="toast" hidden></button>
+  <script src="./app.js"></script>
 </body>
 </html>
