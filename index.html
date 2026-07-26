@@ -3,61 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f7f0e3">
-  <title>行迹 · 长沙咖啡地图</title>
+  <meta name="theme-color" content="#f4efe5">
+  <title>行迹 · 城市咖啡漫游</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main class="app">
-    <header>
-      <small>CHANGSHA · COFFEE WALK</small>
-      <h1 id="title">行迹 · 长沙咖啡地图</h1>
-      <button class="more" aria-label="更多">•••</button>
-    </header>
-
+  <main class="shell">
     <section id="mapPage" class="page active">
-      <div class="filters"><button class="active">附近 3 公里⌄</button><button>独立咖啡</button><button>可盖章</button></div>
-      <div class="map">
-        <div class="mountain"><b>岳麓山</b></div>
-        <div class="river"><b>湘江</b><i>橘子洲</i></div>
-        <span class="place p1">开福区</span><span class="place p2">五一广场</span><span class="place p3">天心区</span>
-        <button class="pin" style="left:55%;top:50%" data-id="0">☕</button>
-        <button class="pin" style="left:68%;top:31%" data-id="1">☕</button>
-        <button class="pin" style="left:73%;top:65%" data-id="2">☕</button>
-        <button class="pin" style="left:21%;top:51%" data-id="3">☕</button>
-        <button class="pin" style="left:43%;top:67%" data-id="4">☕</button>
-        <div id="location" class="location"><span></span></div>
-        <button id="locate" class="locate" aria-label="定位">⌖</button>
+      <div id="map"></div>
+      <header class="map-header">
+        <div>
+          <small>CHANGSHA COFFEE WALK</small>
+          <h1>行迹</h1>
+        </div>
+        <button id="profileBtn" class="round avatar-btn" aria-label="个人中心">行</button>
+      </header>
+
+      <div class="chips" aria-label="咖啡筛选">
+        <button class="active" data-filter="all">附近咖啡</button>
+        <button data-filter="specialty">精品手冲</button>
+        <button data-filter="stamp">可盖章</button>
       </div>
-      <section class="nearby">
-        <div class="handle"></div>
-        <div class="section-title"><div><small>NEARBY PICKS</small><h2 id="nearbyTitle">长沙精选咖啡</h2></div><button id="refresh">刷新附近</button></div>
-        <div id="cafeList"></div>
+
+      <button id="locate" class="round locate" aria-label="获取实时定位">
+        <span></span>
+      </button>
+
+      <section class="dock">
+        <div class="dock-head">
+          <div>
+            <small>NEAR YOU</small>
+            <h2 id="dockTitle">发现附近好咖啡</h2>
+            <p id="statusText">正在获取你的位置…</p>
+          </div>
+          <button id="expandBtn" class="text-btn">查看全部</button>
+        </div>
+        <div id="cafeRail" class="cafe-rail"></div>
       </section>
     </section>
 
-    <section id="badgesPage" class="page badges-page">
-      <p>走进长沙的街巷与山水，收集属于你的城市记忆。</p>
-      <strong>已收集 <b id="badgeCount">8</b> / 30</strong>
+    <section id="badgesPage" class="page content-page">
+      <header class="plain-header">
+        <div><small>CHANGSHA MEMORIES</small><h1>城市印记</h1></div>
+        <span id="badgeProgress">2 / 6</span>
+      </header>
+      <p class="intro">走近长沙的山水与街巷，把城市地标收藏成一枚枚旅行徽章。</p>
       <div id="badgeGrid" class="badge-grid"></div>
     </section>
 
-    <section id="mePage" class="page me-page">
-      <div class="avatar">行</div><h2>长沙漫游者</h2><p>第 2 级 · 街巷初探</p>
-      <div class="progress"><i></i></div>
-      <div class="stats"><div><b id="myCount">8</b><span>印记</span></div><div><b>6.8 km</b><span>步行</span></div><div><b>160</b><span>星火值</span></div></div>
-      <article class="route"><small>今日推荐路线</small><h2>湘江咖啡漫步</h2><p>潮宗街 → 五一广场 → 橘子洲<br>4.2公里 · 约2小时 · 3家咖啡</p><button id="routeBtn">开始探索</button></article>
+    <section id="mePage" class="page content-page">
+      <header class="plain-header"><div><small>MY JOURNEY</small><h1>我的漫游</h1></div></header>
+      <div class="profile-card">
+        <div class="avatar-large">行</div>
+        <div><h2>长沙漫游者</h2><p>Lv.2 · 街巷初探</p></div>
+      </div>
+      <div class="stats">
+        <div><b>2</b><span>城市印记</span></div>
+        <div><b>6.8</b><span>漫游公里</span></div>
+        <div><b>5</b><span>咖啡足迹</span></div>
+      </div>
+      <article class="route-card">
+        <small>WEEKEND ROUTE</small>
+        <h2>湘江两岸咖啡漫步</h2>
+        <p>潮宗街 → 五一广场 → 杜甫江阁</p>
+        <div><span>4.2 公里</span><span>约 2 小时</span><span>3 家咖啡</span></div>
+        <button id="routeBtn">查看漫游路线</button>
+      </article>
     </section>
 
     <nav>
-      <button class="active" data-page="map"><i>⌑</i><span>地图</span></button>
+      <button class="active" data-page="map"><i>⌖</i><span>地图</span></button>
       <button data-page="badges"><i>✦</i><span>印记</span></button>
-      <button data-page="me"><i>♙</i><span>我的</span></button>
+      <button data-page="me"><i>◯</i><span>我的</span></button>
     </nav>
   </main>
 
-  <div id="modal" class="modal" hidden><article class="detail"><button id="close">×</button><div id="detailPhoto" class="detail-photo"></div><div class="detail-body"><small>CURATED COFFEE STOP</small><h2 id="detailName"></h2><div id="detailTags" class="tags"></div><p id="detailDistance"></p><p id="detailNote"></p><div class="drink"><span>本店推荐</span><b id="detailDrink"></b></div><div class="actions"><button id="navigate">↗ 导航到店</button><button id="stamp" class="primary">✦ 到店盖章</button></div></div></article></div>
-  <button id="toast" class="toast" hidden></button>
+  <div id="sheet" class="sheet" hidden>
+    <button class="scrim" data-close aria-label="关闭"></button>
+    <article>
+      <button class="sheet-close" data-close>×</button>
+      <div class="shop-cover"><span>COFFEE<br>IN CHANGSHA</span></div>
+      <div class="sheet-body">
+        <small>CURATED COFFEE STOP</small>
+        <h2 id="shopName"></h2>
+        <p id="shopMeta"></p>
+        <div id="shopTags" class="tags"></div>
+        <p id="shopAddress" class="address"></p>
+        <div class="sheet-actions">
+          <button id="navBtn">地图导航</button>
+          <button id="stampBtn" class="primary">到店盖章</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
