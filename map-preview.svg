@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1800" viewBox="0 0 900 1800">
+  <defs>
+    <filter id="shadow"><feDropShadow dx="8" dy="10" stdDeviation="8" flood-opacity=".25"/></filter>
+    <pattern id="streets" width="180" height="180" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <rect width="180" height="180" fill="#eadfc8"/>
+      <path d="M0 40H180M0 128H180M55 0V180M140 0V180" stroke="#fff8e9" stroke-width="18"/>
+      <path d="M0 40H180M0 128H180M55 0V180M140 0V180" stroke="#cab995" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1800" rx="72" fill="#17130f"/>
+  <rect x="20" y="20" width="860" height="1760" rx="55" fill="#f2e5ca"/>
+  <rect x="20" y="20" width="860" height="118" rx="55" fill="#17130f"/>
+  <text x="70" y="92" fill="#f6ead3" font-size="34" font-family="sans-serif" font-weight="700">14:26</text>
+  <text x="725" y="91" fill="#f6ead3" font-size="28" font-family="sans-serif">5G  ▰▰▰</text>
+  <rect x="20" y="126" width="860" height="1510" fill="url(#streets)"/>
+  <path d="M540 126C455 380 620 540 520 770S360 1180 470 1636" fill="none" stroke="#95c8d0" stroke-width="105" opacity=".85"/>
+  <path d="M540 126C455 380 620 540 520 770S360 1180 470 1636" fill="none" stroke="#d8f0ed" stroke-width="4" opacity=".8"/>
+  <g filter="url(#shadow)">
+    <rect x="55" y="170" width="510" height="128" rx="6" fill="#f2e3c2" stroke="#8a724f" stroke-width="3"/>
+    <text x="88" y="224" font-size="41" font-family="serif" font-weight="900" fill="#2b2118">行迹咖啡地图</text>
+    <text x="88" y="267" font-size="22" font-family="sans-serif" fill="#6f5c47">在长沙，沿街寻找一杯好咖啡</text>
+    <rect x="680" y="189" width="145" height="70" rx="35" fill="#211c17"/>
+    <text x="715" y="235" font-size="28" font-family="sans-serif" fill="#efcf84">✦ 120</text>
+  </g>
+  <g font-family="sans-serif" font-size="25" font-weight="700">
+    <rect x="55" y="330" width="185" height="72" rx="9" fill="#6f4a2f"/><text x="92" y="376" fill="#fff">☕ 咖啡</text>
+    <rect x="255" y="330" width="140" height="72" rx="9" fill="#f6ead3" stroke="#8d795c" stroke-width="2"/><text x="298" y="376" fill="#3a2a20">全部</text>
+    <rect x="410" y="330" width="170" height="72" rx="9" fill="#f6ead3" stroke="#8d795c" stroke-width="2"/><text x="447" y="376" fill="#3a2a20">🏯 古迹</text>
+  </g>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g transform="translate(205 545)"><path d="M0-58c-48 0-78 31-78 70 0 58 78 125 78 125s78-67 78-125c0-39-30-70-78-70z" fill="#6f4a2f" stroke="#fff2d7" stroke-width="8"/><text y="26" font-size="58">☕</text><rect x="-105" y="142" width="210" height="48" rx="8" fill="#fff8e8"/><text y="174" font-size="20" fill="#302117">一巷一院咖啡</text></g>
+    <g transform="translate(655 650)"><path d="M0-58c-48 0-78 31-78 70 0 58 78 125 78 125s78-67 78-125c0-39-30-70-78-70z" fill="#6f4a2f" stroke="#fff2d7" stroke-width="8"/><text y="26" font-size="58">☕</text><rect x="-105" y="142" width="210" height="48" rx="8" fill="#fff8e8"/><text y="174" font-size="20" fill="#302117">叁點叁咖啡馆</text></g>
+    <g transform="translate(270 930)"><path d="M0-58c-48 0-78 31-78 70 0 58 78 125 78 125s78-67 78-125c0-39-30-70-78-70z" fill="#6f4a2f" stroke="#fff2d7" stroke-width="8"/><text y="26" font-size="58">☕</text><rect x="-118" y="142" width="236" height="48" rx="8" fill="#fff8e8"/><text y="174" font-size="20" fill="#302117">库迪·凤凰街店</text></g>
+    <g transform="translate(680 1055)"><path d="M0-58c-48 0-78 31-78 70 0 58 78 125 78 125s78-67 78-125c0-39-30-70-78-70z" fill="#6f4a2f" stroke="#fff2d7" stroke-width="8"/><text y="26" font-size="58">☕</text><rect x="-118" y="142" width="236" height="48" rx="8" fill="#fff8e8"/><text y="174" font-size="20" fill="#302117">瑞幸·五江广场</text></g>
+  </g>
+  <circle cx="782" cy="1250" r="55" fill="#f5e7ca" stroke="#765c3e" stroke-width="3" filter="url(#shadow)"/>
+  <text x="782" y="1265" text-anchor="middle" font-size="56" fill="#d8522d">⌖</text>
+  <g filter="url(#shadow)">
+    <rect x="55" y="1392" width="790" height="178" rx="12" fill="#211c17" stroke="#5e4c37" stroke-width="3"/>
+    <circle cx="152" cy="1481" r="58" fill="none" stroke="#c6975e" stroke-width="9"/>
+    <text x="137" y="1493" font-size="35" font-family="sans-serif" font-weight="800" fill="#f4e4c5">2</text>
+    <text x="164" y="1510" font-size="19" font-family="sans-serif" fill="#b6a386">/8</text>
+    <text x="245" y="1465" font-size="31" font-family="sans-serif" font-weight="800" fill="#f4e4c5">长沙咖啡收集册</text>
+    <text x="245" y="1515" font-size="22" font-family="sans-serif" fill="#b6a386">8 家咖啡店 · 到店200米内收集印章</text>
+  </g>
+  <rect x="20" y="1636" width="860" height="144" fill="#1c1813"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="125" y="1699" font-size="34">☕</text><text x="125" y="1742" font-size="20" fill="#e75a31">咖啡</text>
+    <text x="340" y="1699" font-size="34">🧭</text><text x="340" y="1742" font-size="20" fill="#a99a86">路线</text>
+    <text x="560" y="1699" font-size="34">🏅</text><text x="560" y="1742" font-size="20" fill="#a99a86">图鉴</text>
+    <text x="775" y="1699" font-size="34">♛</text><text x="775" y="1742" font-size="20" fill="#a99a86">排行</text>
+  </g>
+</svg>

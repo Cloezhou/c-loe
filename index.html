@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17130f">
+  <title>行迹 · 长沙咖啡地图</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <img class="map-preview" src="map-preview.svg" alt="行迹长沙咖啡地图">
+
+    <button class="location-button" id="locationButton" type="button" aria-label="获取当前位置">
+      <span>⌖</span>
+    </button>
+
+    <nav class="tabbar" aria-label="主要栏目">
+      <button class="tab active" type="button" data-tab="咖啡"><span>☕</span>咖啡</button>
+      <button class="tab" type="button" data-tab="路线"><span>🧭</span>路线</button>
+      <button class="tab" type="button" data-tab="图鉴"><span>🏅</span>图鉴</button>
+      <button class="tab" type="button" data-tab="排行"><span>♛</span>排行</button>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
